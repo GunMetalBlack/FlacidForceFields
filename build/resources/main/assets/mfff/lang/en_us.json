@@ -1,0 +1,10 @@
+{
+  "block.mfff.forceprojector": "Force Projector",
+  "gui.mfff.force_projector_ui.Radius": "Radius",
+  "gui.mfff.force_projector_ui.OffsetZ": "OffsetZ",
+  "gui.mfff.force_projector_ui.OffsetX": "OffsetX",
+  "gui.mfff.force_projector_ui.OffsetY": "OffsetY",
+  "block.mfff.force_block": "Force Block",
+  "gui.mfff.force_projector_ui.label_force_projector": "Force Projector",
+  "item_group.mfff.mffftab": "MFFF"
+}

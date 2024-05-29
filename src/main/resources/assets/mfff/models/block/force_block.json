@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "mfff:block/redoforcetexture",
+    "up": "mfff:block/redoforcetexture",
+    "north": "mfff:block/redoforcetexture",
+    "east": "mfff:block/redoforcetexture",
+    "south": "mfff:block/redoforcetexture",
+    "west": "mfff:block/redoforcetexture",
+    "particle": "mfff:block/redoforcetexture"
+  },
+  "render_type": "translucent"
+}

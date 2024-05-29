@@ -1,0 +1,22 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2024-05-28 13:35:12 -0400"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:frozen_river": "2024-05-28 13:35:30 -0400",
+      "minecraft:snowy_beach": "2024-05-28 13:35:14 -0400"
+    },
+    "done": false
+  },
+  "minecraft:recipes/redstone/redstone": {
+    "criteria": {
+      "has_redstone_block": "2024-05-28 13:35:25 -0400"
+    },
+    "done": true
+  },
+  "DataVersion": 3700
+}

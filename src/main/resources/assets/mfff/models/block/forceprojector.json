@@ -1,0 +1,9 @@
+{
+  "parent": "mfff:custom/force_projector",
+  "textures": {
+    "all": "mfff:block/force_projector",
+    "particle": "mfff:block/force_projector",
+    "0": "mfff:block/force_projector"
+  },
+  "render_type": "cutout_mipped"
+}

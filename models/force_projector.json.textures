@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "force_projector"
+      },
+      "name": "default"
+    }
+  }
+}

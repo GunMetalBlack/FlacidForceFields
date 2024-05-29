@@ -1,0 +1,84 @@
+{
+  "_fv": 60,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 372,
+    "height": 165,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_force_projector",
+          "text": {
+            "fixedValue": "Force Projector"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 42,
+          "y": 44
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Radius",
+          "name": "Radius",
+          "width": 120,
+          "height": 20,
+          "x": 42,
+          "y": 62
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "OffsetX",
+          "name": "OffsetX",
+          "width": 120,
+          "height": 20,
+          "x": 42,
+          "y": 89
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "OffsetY",
+          "name": "OffsetY",
+          "width": 120,
+          "height": 20,
+          "x": 42,
+          "y": 116
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "OffsetZ",
+          "name": "OffsetZ",
+          "width": 120,
+          "height": 20,
+          "x": 42,
+          "y": 143
+        }
+      }
+    ],
+    "onClosed": {
+      "name": "ForceProjectorUIWhileThisGUIIsOpenTickRadius"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

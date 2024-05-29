@@ -1,0 +1,22 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2024-05-28 12:36:16 -0400"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:old_growth_birch_forest": "2024-05-28 12:36:17 -0400",
+      "minecraft:sparse_jungle": "2024-05-28 12:36:34 -0400"
+    },
+    "done": false
+  },
+  "minecraft:recipes/redstone/redstone": {
+    "criteria": {
+      "has_redstone_block": "2024-05-28 12:36:30 -0400"
+    },
+    "done": true
+  },
+  "DataVersion": 3700
+}

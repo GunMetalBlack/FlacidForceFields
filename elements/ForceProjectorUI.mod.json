@@ -3,7 +3,7 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 372,
+    "width": 294,
     "height": 165,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
@@ -21,7 +21,7 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 42,
+          "x": 78,
           "y": 44
         }
       },
@@ -32,7 +32,7 @@
           "name": "Radius",
           "width": 120,
           "height": 20,
-          "x": 42,
+          "x": 78,
           "y": 62
         }
       },
@@ -43,7 +43,7 @@
           "name": "OffsetX",
           "width": 120,
           "height": 20,
-          "x": 42,
+          "x": 78,
           "y": 89
         }
       },
@@ -54,7 +54,7 @@
           "name": "OffsetY",
           "width": 120,
           "height": 20,
-          "x": 42,
+          "x": 78,
           "y": 116
         }
       },
@@ -65,11 +65,204 @@
           "name": "OffsetZ",
           "width": 120,
           "height": 20,
-          "x": 42,
+          "x": 78,
           "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_capacity",
+          "text": {
+            "fixedValue": "Capacity:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 213,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_current_power",
+          "text": {
+            "fixedValue": "Energy Stored:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 213,
+          "y": 89
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_force_projector_ui_while_th",
+          "text": {
+            "fixedValue": "",
+            "name": "ForceProjectorUIWhileThisGUIIsOpenTick"
+          },
+          "color": {
+            "value": -3342490,
+            "falpha": 0.0
+          },
+          "x": 213,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_400000",
+          "text": {
+            "fixedValue": "400,000"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 213,
+          "y": 125
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "dark_tile.png",
+          "use1Xscale": false,
+          "x": 213,
+          "y": 89
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "dark_tile.png",
+          "use1Xscale": false,
+          "x": 258,
+          "y": 89
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "dark_tile.png",
+          "use1Xscale": false,
+          "x": 213,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "dark_tile.png",
+          "use1Xscale": false,
+          "x": 258,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "textplacement.png",
+          "use1Xscale": false,
+          "x": 213,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "textplacement.png",
+          "use1Xscale": false,
+          "x": 222,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "textplacement.png",
+          "use1Xscale": false,
+          "x": 231,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "textplacement.png",
+          "use1Xscale": false,
+          "x": 240,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "textplacement.png",
+          "use1Xscale": false,
+          "x": 249,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "textplacement.png",
+          "use1Xscale": false,
+          "x": 258,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "textplacement.png",
+          "use1Xscale": false,
+          "x": 267,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "textplacement.png",
+          "use1Xscale": false,
+          "x": 276,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "textplacement.png",
+          "use1Xscale": false,
+          "x": 285,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "textplacement.png",
+          "use1Xscale": false,
+          "x": 291,
+          "y": 107
         }
       }
     ],
+    "onOpen": {
+      "name": "ForceProjectorUIThisGUIIsOpened"
+    },
+    "onTick": {
+      "name": "ForceProjectorUIWhileThisGUIIsOpenTick"
+    },
     "onClosed": {
       "name": "ForceProjectorUIWhileThisGUIIsOpenTickRadius"
     },

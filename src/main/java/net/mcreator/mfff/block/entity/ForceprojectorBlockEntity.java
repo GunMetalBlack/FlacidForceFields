@@ -132,7 +132,7 @@ public class ForceprojectorBlockEntity extends RandomizableContainerBlockEntity 
 		return handler;
 	}
 
-	private final EnergyStorage energyStorage = new EnergyStorage(400000, 500, 200, 0) {
+	private final EnergyStorage energyStorage = new EnergyStorage(400000, 1000, 1000, 0) {
 		@Override
 		public int receiveEnergy(int maxReceive, boolean simulate) {
 			int retval = super.receiveEnergy(maxReceive, simulate);

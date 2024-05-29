@@ -71,6 +71,8 @@ public class MfffModVariables {
 			clone.transfer_force_offsety = original.transfer_force_offsety;
 			clone.transfer_force_offsetz = original.transfer_force_offsetz;
 			clone.is_force_gui_values = original.is_force_gui_values;
+			clone.should_update_force_ui = original.should_update_force_ui;
+			clone.update_force_gui_counter = original.update_force_gui_counter;
 			if (!event.isWasDeath()) {
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
@@ -224,6 +226,8 @@ public class MfffModVariables {
 		public double transfer_force_offsety = 0;
 		public double transfer_force_offsetz = 0;
 		public boolean is_force_gui_values = true;
+		public boolean should_update_force_ui = false;
+		public double update_force_gui_counter = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -233,6 +237,8 @@ public class MfffModVariables {
 			nbt.putDouble("transfer_force_offsety", transfer_force_offsety);
 			nbt.putDouble("transfer_force_offsetz", transfer_force_offsetz);
 			nbt.putBoolean("is_force_gui_values", is_force_gui_values);
+			nbt.putBoolean("should_update_force_ui", should_update_force_ui);
+			nbt.putDouble("update_force_gui_counter", update_force_gui_counter);
 			return nbt;
 		}
 
@@ -243,6 +249,8 @@ public class MfffModVariables {
 			transfer_force_offsety = nbt.getDouble("transfer_force_offsety");
 			transfer_force_offsetz = nbt.getDouble("transfer_force_offsetz");
 			is_force_gui_values = nbt.getBoolean("is_force_gui_values");
+			should_update_force_ui = nbt.getBoolean("should_update_force_ui");
+			update_force_gui_counter = nbt.getDouble("update_force_gui_counter");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

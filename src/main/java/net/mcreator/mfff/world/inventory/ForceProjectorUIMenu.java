@@ -3,6 +3,9 @@ package net.mcreator.mfff.world.inventory;
 
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
@@ -17,12 +20,15 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.mfff.procedures.ForceProjectorUIWhileThisGUIIsOpenTickRadiusProcedure;
+import net.mcreator.mfff.procedures.ForceProjectorUIWhileThisGUIIsOpenTickProcedure;
+import net.mcreator.mfff.procedures.ForceProjectorUIThisGUIIsOpenedProcedure;
 import net.mcreator.mfff.init.MfffModMenus;
 
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
+@Mod.EventBusSubscriber
 public class ForceProjectorUIMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
 	public final Level world;
@@ -49,6 +55,7 @@ public class ForceProjectorUIMenu extends AbstractContainerMenu implements Suppl
 			this.z = pos.getZ();
 			access = ContainerLevelAccess.create(world, pos);
 		}
+		ForceProjectorUIThisGUIIsOpenedProcedure.execute(entity);
 	}
 
 	@Override
@@ -77,5 +84,17 @@ public class ForceProjectorUIMenu extends AbstractContainerMenu implements Suppl
 
 	public Map<Integer, Slot> get() {
 		return customSlots;
+	}
+
+	@SubscribeEvent
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		Player entity = event.player;
+		if (event.phase == TickEvent.Phase.END && entity.containerMenu instanceof ForceProjectorUIMenu) {
+			Level world = entity.level();
+			double x = entity.getX();
+			double y = entity.getY();
+			double z = entity.getZ();
+			ForceProjectorUIWhileThisGUIIsOpenTickProcedure.execute(world, x, y, z, entity, guistate);
+		}
 	}
 }

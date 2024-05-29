@@ -34,6 +34,16 @@ public class ForceprojectorOnTickUpdateProcedure {
 					return blockEntity.getPersistentData().getDouble(tag);
 				return -1;
 			}
+		}.getValue(world, BlockPos.containing(x, y, z), "int_radius") > 50) {
+			radius = 50;
+		}
+		if (new Object() {
+			public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getPersistentData().getDouble(tag);
+				return -1;
+			}
 		}.getValue(world, BlockPos.containing(x, y, z), "int_radius") <= 0) {
 			radius = 3;
 		} else {
@@ -104,14 +114,14 @@ public class ForceprojectorOnTickUpdateProcedure {
 						}
 					}.getEnergyStored(world, BlockPos.containing(x, y, z)) >= 10) {
 						if ((world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ)))).getBlock() == Blocks.AIR
-								|| world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))).getBlock() instanceof IPlantable _plant15
-										&& _plant15.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.PLAINS
 								|| world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))).getBlock() instanceof IPlantable _plant16
-										&& _plant16.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.DESERT
+										&& _plant16.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.PLAINS
 								|| world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))).getBlock() instanceof IPlantable _plant17
-										&& _plant17.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.BEACH
+										&& _plant17.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.DESERT
 								|| world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))).getBlock() instanceof IPlantable _plant18
-										&& _plant18.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.CAVE
+										&& _plant18.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.BEACH
+								|| world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))).getBlock() instanceof IPlantable _plant19
+										&& _plant19.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.CAVE
 								|| (world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ)))).getBlock() == Blocks.WATER) {
 							world.setBlock(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ)), MfffModBlocks.FORCE_BLOCK.get().defaultBlockState(), 3);
 							if (world instanceof ILevelExtension _ext) {

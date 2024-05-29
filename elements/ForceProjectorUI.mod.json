@@ -4,7 +4,7 @@
   "definition": {
     "type": 0,
     "width": 294,
-    "height": 165,
+    "height": 171,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -33,7 +33,7 @@
           "width": 120,
           "height": 20,
           "x": 78,
-          "y": 62
+          "y": 71
         }
       },
       {
@@ -44,7 +44,7 @@
           "width": 120,
           "height": 20,
           "x": 78,
-          "y": 89
+          "y": 107
         }
       },
       {
@@ -55,7 +55,7 @@
           "width": 120,
           "height": 20,
           "x": 78,
-          "y": 116
+          "y": 143
         }
       },
       {
@@ -66,7 +66,7 @@
           "width": 120,
           "height": 20,
           "x": 78,
-          "y": 143
+          "y": 179
         }
       },
       {
@@ -108,7 +108,7 @@
             "name": "ForceProjectorUIWhileThisGUIIsOpenTick"
           },
           "color": {
-            "value": -3342490,
+            "value": -6697984,
             "falpha": 0.0
           },
           "x": 213,
@@ -254,6 +254,66 @@
           "use1Xscale": false,
           "x": 291,
           "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_offsetx",
+          "text": {
+            "fixedValue": "OffsetX:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 78,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_offsety",
+          "text": {
+            "fixedValue": "OffsetY"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 78,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_offsetz",
+          "text": {
+            "fixedValue": "OffsetZ"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 78,
+          "y": 170
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_radius",
+          "text": {
+            "fixedValue": "Radius: | Max: 50"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 78,
+          "y": 62
         }
       }
     ],

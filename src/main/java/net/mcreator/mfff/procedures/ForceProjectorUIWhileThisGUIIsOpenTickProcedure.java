@@ -11,7 +11,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.components.EditBox;
 
 import net.mcreator.mfff.network.MfffModVariables;
-import net.mcreator.mfff.MfffMod;
 
 import java.util.HashMap;
 
@@ -28,7 +27,28 @@ public class ForceProjectorUIWhileThisGUIIsOpenTickProcedure {
 						return blockEntity.getPersistentData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, BlockPos.containing(x, y, z), "int_radius") != -1) {
+			}.getValue(world, BlockPos.containing(x, y, z), "int_radius") != -1 && new Object() {
+				public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getPersistentData().getDouble(tag);
+					return -1;
+				}
+			}.getValue(world, BlockPos.containing(x, y, z), "int_offsetx") != -1 && new Object() {
+				public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getPersistentData().getDouble(tag);
+					return -1;
+				}
+			}.getValue(world, BlockPos.containing(x, y, z), "int_offsety") != -1 && new Object() {
+				public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+					BlockEntity blockEntity = world.getBlockEntity(pos);
+					if (blockEntity != null)
+						return blockEntity.getPersistentData().getDouble(tag);
+					return -1;
+				}
+			}.getValue(world, BlockPos.containing(x, y, z), "int_offsetz") != -1) {
 				if (guistate.get("text:Radius") instanceof EditBox _tf)
 					_tf.setValue((new java.text.DecimalFormat("##").format(new Object() {
 						public double getValue(LevelAccessor world, BlockPos pos, String tag) {
@@ -38,14 +58,33 @@ public class ForceProjectorUIWhileThisGUIIsOpenTickProcedure {
 							return -1;
 						}
 					}.getValue(world, BlockPos.containing(x, y, z), "int_radius")) + ""));
-				MfffMod.LOGGER.info(new java.text.DecimalFormat("##").format(new Object() {
-					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
-						BlockEntity blockEntity = world.getBlockEntity(pos);
-						if (blockEntity != null)
-							return blockEntity.getPersistentData().getDouble(tag);
-						return -1;
-					}
-				}.getValue(world, BlockPos.containing(x, y, z), "int_radius")) + "");
+				if (guistate.get("text:OffsetX") instanceof EditBox _tf)
+					_tf.setValue((new java.text.DecimalFormat("##").format(new Object() {
+						public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+							BlockEntity blockEntity = world.getBlockEntity(pos);
+							if (blockEntity != null)
+								return blockEntity.getPersistentData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(world, BlockPos.containing(x, y, z), "int_offsetx")) + ""));
+				if (guistate.get("text:OffsetY") instanceof EditBox _tf)
+					_tf.setValue((new java.text.DecimalFormat("##").format(new Object() {
+						public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+							BlockEntity blockEntity = world.getBlockEntity(pos);
+							if (blockEntity != null)
+								return blockEntity.getPersistentData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(world, BlockPos.containing(x, y, z), "int_offsety")) + ""));
+				if (guistate.get("text:OffsetZ") instanceof EditBox _tf)
+					_tf.setValue((new java.text.DecimalFormat("##").format(new Object() {
+						public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+							BlockEntity blockEntity = world.getBlockEntity(pos);
+							if (blockEntity != null)
+								return blockEntity.getPersistentData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(world, BlockPos.containing(x, y, z), "int_offsetz")) + ""));
 				{
 					MfffModVariables.PlayerVariables _vars = entity.getData(MfffModVariables.PLAYER_VARIABLES);
 					_vars.update_force_gui_counter = entity.getData(MfffModVariables.PLAYER_VARIABLES).update_force_gui_counter + 1;

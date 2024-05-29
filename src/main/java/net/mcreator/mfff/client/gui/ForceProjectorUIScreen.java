@@ -34,7 +34,7 @@ public class ForceProjectorUIScreen extends AbstractContainerScreen<ForceProject
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 294;
-		this.imageHeight = 165;
+		this.imageHeight = 171;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("mfff:textures/screens/force_projector_ui.png");
@@ -57,33 +57,33 @@ public class ForceProjectorUIScreen extends AbstractContainerScreen<ForceProject
 		RenderSystem.defaultBlendFunc();
 		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/dark_tile.png"), this.leftPos + 146, this.topPos + 51, 0, 0, 50, 35, 50, 35);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/dark_tile.png"), this.leftPos + 146, this.topPos + 54, 0, 0, 50, 35, 50, 35);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/dark_tile.png"), this.leftPos + 191, this.topPos + 51, 0, 0, 50, 35, 50, 35);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/dark_tile.png"), this.leftPos + 191, this.topPos + 54, 0, 0, 50, 35, 50, 35);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/dark_tile.png"), this.leftPos + 146, this.topPos + 69, 0, 0, 50, 35, 50, 35);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/dark_tile.png"), this.leftPos + 146, this.topPos + 72, 0, 0, 50, 35, 50, 35);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/dark_tile.png"), this.leftPos + 191, this.topPos + 69, 0, 0, 50, 35, 50, 35);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/dark_tile.png"), this.leftPos + 191, this.topPos + 72, 0, 0, 50, 35, 50, 35);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 146, this.topPos + 69, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 146, this.topPos + 72, 0, 0, 16, 16, 16, 16);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 155, this.topPos + 69, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 155, this.topPos + 72, 0, 0, 16, 16, 16, 16);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 164, this.topPos + 69, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 164, this.topPos + 72, 0, 0, 16, 16, 16, 16);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 173, this.topPos + 69, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 173, this.topPos + 72, 0, 0, 16, 16, 16, 16);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 182, this.topPos + 69, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 182, this.topPos + 72, 0, 0, 16, 16, 16, 16);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 191, this.topPos + 69, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 191, this.topPos + 72, 0, 0, 16, 16, 16, 16);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 200, this.topPos + 69, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 200, this.topPos + 72, 0, 0, 16, 16, 16, 16);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 209, this.topPos + 69, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 209, this.topPos + 72, 0, 0, 16, 16, 16, 16);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 218, this.topPos + 69, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 218, this.topPos + 72, 0, 0, 16, 16, 16, 16);
 
-		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 224, this.topPos + 69, 0, 0, 16, 16, 16, 16);
+		guiGraphics.blit(new ResourceLocation("mfff:textures/screens/textplacement.png"), this.leftPos + 224, this.topPos + 72, 0, 0, 16, 16, 16, 16);
 
 		RenderSystem.disableBlend();
 	}
@@ -107,19 +107,23 @@ public class ForceProjectorUIScreen extends AbstractContainerScreen<ForceProject
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_force_projector"), 11, 6, -12829636, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_capacity"), 146, 78, -12829636, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_current_power"), 146, 51, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_force_projector"), 11, 9, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_capacity"), 146, 81, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_current_power"), 146, 54, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				ForceProjectorUIWhileThisGUIIsOpenTickProcedure.execute(world, x, y, z, entity, guistate), 146, 60, -3342490, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_400000"), 146, 87, -12829636, false);
+				ForceProjectorUIWhileThisGUIIsOpenTickProcedure.execute(world, x, y, z, entity, guistate), 146, 63, -6697984, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_400000"), 146, 90, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_offsetx"), 11, 63, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_offsety"), 11, 99, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_offsetz"), 11, 135, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_radius"), 11, 27, -12829636, false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		Radius = new EditBox(this.font, this.leftPos + 12, this.topPos + 25, 118, 18, Component.translatable("gui.mfff.force_projector_ui.Radius")) {
+		Radius = new EditBox(this.font, this.leftPos + 12, this.topPos + 37, 118, 18, Component.translatable("gui.mfff.force_projector_ui.Radius")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -142,7 +146,7 @@ public class ForceProjectorUIScreen extends AbstractContainerScreen<ForceProject
 		Radius.setSuggestion(Component.translatable("gui.mfff.force_projector_ui.Radius").getString());
 		guistate.put("text:Radius", Radius);
 		this.addWidget(this.Radius);
-		OffsetX = new EditBox(this.font, this.leftPos + 12, this.topPos + 52, 118, 18, Component.translatable("gui.mfff.force_projector_ui.OffsetX")) {
+		OffsetX = new EditBox(this.font, this.leftPos + 12, this.topPos + 73, 118, 18, Component.translatable("gui.mfff.force_projector_ui.OffsetX")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -165,7 +169,7 @@ public class ForceProjectorUIScreen extends AbstractContainerScreen<ForceProject
 		OffsetX.setSuggestion(Component.translatable("gui.mfff.force_projector_ui.OffsetX").getString());
 		guistate.put("text:OffsetX", OffsetX);
 		this.addWidget(this.OffsetX);
-		OffsetY = new EditBox(this.font, this.leftPos + 12, this.topPos + 79, 118, 18, Component.translatable("gui.mfff.force_projector_ui.OffsetY")) {
+		OffsetY = new EditBox(this.font, this.leftPos + 12, this.topPos + 109, 118, 18, Component.translatable("gui.mfff.force_projector_ui.OffsetY")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -188,7 +192,7 @@ public class ForceProjectorUIScreen extends AbstractContainerScreen<ForceProject
 		OffsetY.setSuggestion(Component.translatable("gui.mfff.force_projector_ui.OffsetY").getString());
 		guistate.put("text:OffsetY", OffsetY);
 		this.addWidget(this.OffsetY);
-		OffsetZ = new EditBox(this.font, this.leftPos + 12, this.topPos + 106, 118, 18, Component.translatable("gui.mfff.force_projector_ui.OffsetZ")) {
+		OffsetZ = new EditBox(this.font, this.leftPos + 12, this.topPos + 145, 118, 18, Component.translatable("gui.mfff.force_projector_ui.OffsetZ")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);

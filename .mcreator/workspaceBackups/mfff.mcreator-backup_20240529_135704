@@ -280,6 +280,14 @@
         ],
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -294,6 +302,25 @@
           {
             "name": "world",
             "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ForceProjectorUIThisGUIIsOpened",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "force_projector_ui_this_gui_is_opened",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/ForceProjectorUIThisGUIIsOpenedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
           }
         ]
       }
@@ -335,6 +362,18 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "true"
+    },
+    {
+      "name": "should_update_force_ui",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "update_force_gui_counter",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -354,7 +393,8 @@
       "gui.mfff.force_projector_ui.label_force_projector": "Force Projector",
       "item_group.mfff.mffftab": "MFFF",
       "gui.mfff.force_projector_ui.label_capacity": "Capacity:",
-      "gui.mfff.force_projector_ui.label_current_power": "Current Power:"
+      "gui.mfff.force_projector_ui.label_400000": "400,000",
+      "gui.mfff.force_projector_ui.label_current_power": "Energy Stored:"
     }
   },
   "foldersRoot": {

@@ -8,7 +8,7 @@ import net.minecraft.core.BlockPos;
 
 public class ForceBlockOnTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if (Mth.nextInt(RandomSource.create(), 1, 50) == 5) {
+		if (Mth.nextInt(RandomSource.create(), 1, 50) == 12) {
 			world.setBlock(BlockPos.containing(x, y, z), Blocks.AIR.defaultBlockState(), 3);
 		}
 	}

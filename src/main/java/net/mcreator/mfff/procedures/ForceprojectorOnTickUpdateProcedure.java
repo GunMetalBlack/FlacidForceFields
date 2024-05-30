@@ -27,6 +27,8 @@ public class ForceprojectorOnTickUpdateProcedure {
 		double sudoBlockPosX = 0;
 		double sudoBlockPosY = 0;
 		double sudoBlockPosZ = 0;
+		double EnergyUsage = 0;
+		EnergyUsage = 1000;
 		if (new Object() {
 			public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 				BlockEntity blockEntity = world.getBlockEntity(pos);
@@ -112,7 +114,7 @@ public class ForceprojectorOnTickUpdateProcedure {
 							}
 							return 0;
 						}
-					}.getEnergyStored(world, BlockPos.containing(x, y, z)) >= 10) {
+					}.getEnergyStored(world, BlockPos.containing(x, y, z)) >= EnergyUsage) {
 						if ((world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ)))).getBlock() == Blocks.AIR
 								|| world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))).getBlock() instanceof IPlantable _plant16
 										&& _plant16.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.PLAINS
@@ -127,7 +129,7 @@ public class ForceprojectorOnTickUpdateProcedure {
 							if (world instanceof ILevelExtension _ext) {
 								IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y, z), null);
 								if (_entityStorage != null)
-									_entityStorage.extractEnergy(10, false);
+									_entityStorage.extractEnergy((int) EnergyUsage, false);
 							}
 						}
 					}

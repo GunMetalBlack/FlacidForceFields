@@ -280,6 +280,14 @@
         ],
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -311,24 +319,8 @@
         ],
         "dependencies": [
           {
-            "name": "guistate",
-            "type": "map"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
+            "name": "entity",
+            "type": "entity"
           }
         ]
       }
@@ -370,6 +362,18 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "true"
+    },
+    {
+      "name": "should_update_force_ui",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "update_force_gui_counter",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -381,15 +385,20 @@
   "language_map": {
     "en_us": {
       "block.mfff.forceprojector": "Force Projector",
+      "gui.mfff.force_projector_ui.label_offsety": "OffsetY",
       "gui.mfff.force_projector_ui.Radius": "Radius",
+      "gui.mfff.force_projector_ui.label_offsetz": "OffsetZ",
+      "gui.mfff.force_projector_ui.label_offsetx": "OffsetX:",
+      "gui.mfff.force_projector_ui.label_radius": "Radius: | Max: 50",
       "gui.mfff.force_projector_ui.OffsetZ": "OffsetZ",
       "gui.mfff.force_projector_ui.OffsetX": "OffsetX",
       "gui.mfff.force_projector_ui.OffsetY": "OffsetY",
-      "block.mfff.force_block": "Force Block",
       "gui.mfff.force_projector_ui.label_force_projector": "Force Projector",
-      "item_group.mfff.mffftab": "MFFF",
+      "gui.mfff.force_projector_ui.label_400000": "400,000",
+      "gui.mfff.force_projector_ui.label_current_power": "Energy Stored:",
+      "block.mfff.force_block": "Force Block",
       "gui.mfff.force_projector_ui.label_capacity": "Capacity:",
-      "gui.mfff.force_projector_ui.label_current_power": "Current Power:"
+      "item_group.mfff.mffftab": "MFFF"
     }
   },
   "foldersRoot": {

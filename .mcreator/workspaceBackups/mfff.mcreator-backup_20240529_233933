@@ -385,15 +385,20 @@
   "language_map": {
     "en_us": {
       "block.mfff.forceprojector": "Force Projector",
+      "gui.mfff.force_projector_ui.label_offsety": "OffsetY",
       "gui.mfff.force_projector_ui.Radius": "Radius",
+      "gui.mfff.force_projector_ui.label_offsetz": "OffsetZ",
+      "gui.mfff.force_projector_ui.label_offsetx": "OffsetX:",
+      "gui.mfff.force_projector_ui.label_radius": "Radius: | Max: 50",
       "gui.mfff.force_projector_ui.OffsetZ": "OffsetZ",
       "gui.mfff.force_projector_ui.OffsetX": "OffsetX",
       "gui.mfff.force_projector_ui.OffsetY": "OffsetY",
-      "block.mfff.force_block": "Force Block",
       "gui.mfff.force_projector_ui.label_force_projector": "Force Projector",
-      "item_group.mfff.mffftab": "MFFF",
+      "gui.mfff.force_projector_ui.label_400000": "400,000",
+      "gui.mfff.force_projector_ui.label_current_power": "Energy Stored:",
+      "block.mfff.force_block": "Force Block",
       "gui.mfff.force_projector_ui.label_capacity": "Capacity:",
-      "gui.mfff.force_projector_ui.label_current_power": "Current Power:"
+      "item_group.mfff.mffftab": "MFFF"
     }
   },
   "foldersRoot": {

@@ -2,8 +2,6 @@ package net.mcreator.mfff.procedures;
 
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.common.extensions.ILevelExtension;
-import net.neoforged.neoforge.common.PlantType;
-import net.neoforged.neoforge.common.IPlantable;
 import net.neoforged.neoforge.capabilities.Capabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -115,16 +113,7 @@ public class ForceprojectorOnTickUpdateProcedure {
 							return 0;
 						}
 					}.getEnergyStored(world, BlockPos.containing(x, y, z)) >= EnergyUsage) {
-						if ((world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ)))).getBlock() == Blocks.AIR
-								|| world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))).getBlock() instanceof IPlantable _plant16
-										&& _plant16.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.PLAINS
-								|| world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))).getBlock() instanceof IPlantable _plant17
-										&& _plant17.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.DESERT
-								|| world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))).getBlock() instanceof IPlantable _plant18
-										&& _plant18.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.BEACH
-								|| world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))).getBlock() instanceof IPlantable _plant19
-										&& _plant19.getPlantType(world, BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ))) == PlantType.CAVE
-								|| (world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ)))).getBlock() == Blocks.WATER) {
+						if ((world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ)))).getBlock() == Blocks.AIR) {
 							world.setBlock(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ)), MfffModBlocks.FORCE_BLOCK.get().defaultBlockState(), 3);
 							if (world instanceof ILevelExtension _ext) {
 								IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y, z), null);

@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -38,6 +39,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.mfff.world.inventory.ForceProjectorUIMenu;
+import net.mcreator.mfff.procedures.RemoveCurrentForceFieldProcedure;
 import net.mcreator.mfff.procedures.ForceprojectorPlayerStartsToDestroyProcedure;
 import net.mcreator.mfff.procedures.ForceprojectorOnTickUpdateProcedure;
 import net.mcreator.mfff.procedures.ForceprojectorBlockAddedNBTProcedure;
@@ -109,6 +111,19 @@ public class ForceprojectorBlock extends Block implements SimpleWaterloggedBlock
 		super.tick(blockstate, world, pos, random);
 		ForceprojectorOnTickUpdateProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		world.scheduleTick(pos, this, 1);
+	}
+
+	@Override
+	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
+		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
+		RemoveCurrentForceFieldProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		return retval;
+	}
+
+	@Override
+	public void wasExploded(Level world, BlockPos pos, Explosion e) {
+		super.wasExploded(world, pos, e);
+		RemoveCurrentForceFieldProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override

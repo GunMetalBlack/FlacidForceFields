@@ -14,7 +14,6 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.mfff.network.MfffModVariables;
 import net.mcreator.mfff.init.MfffModBlocks;
-import net.mcreator.mfff.MfffMod;
 
 public class ForceprojectorOnTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
@@ -49,7 +48,6 @@ public class ForceprojectorOnTickUpdateProcedure {
 		}.getValue(world, BlockPos.containing(x, y, z), "int_radius") <= 0) {
 			radius = 3;
 		} else {
-			MfffMod.LOGGER.info(radius + "old");
 			radius = new Object() {
 				public double getValue(LevelAccessor world, BlockPos pos, String tag) {
 					BlockEntity blockEntity = world.getBlockEntity(pos);
@@ -58,7 +56,6 @@ public class ForceprojectorOnTickUpdateProcedure {
 					return -1;
 				}
 			}.getValue(world, BlockPos.containing(x, y, z), "int_radius");
-			MfffMod.LOGGER.info(radius + "new");
 		}
 		OffsetX = new Object() {
 			public double getValue(LevelAccessor world, BlockPos pos, String tag) {
@@ -127,6 +124,33 @@ public class ForceprojectorOnTickUpdateProcedure {
 						}
 						if ((world.getBlockState(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ)))).getBlock() == Blocks.AIR) {
 							world.setBlock(BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ)), MfffModBlocks.FORCE_BLOCK.get().defaultBlockState(), 3);
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ));
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null)
+									_blockEntity.getPersistentData().putDouble("force_projector_position_reference_x", x);
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ));
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null)
+									_blockEntity.getPersistentData().putDouble("force_projector_position_reference_y", y);
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(Math.ceil(x + OffsetX + sudoBlockPosX), Math.ceil(y + OffsetY + sudoBlockPosY), Math.ceil(z + OffsetZ + sudoBlockPosZ));
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null)
+									_blockEntity.getPersistentData().putDouble("force_projector_position_reference_z", z);
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
 							if (world instanceof ILevelExtension _ext) {
 								IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y, z), null);
 								if (_entityStorage != null)
@@ -157,7 +181,16 @@ public class ForceprojectorOnTickUpdateProcedure {
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		} else {
-			if ((new Object() {
+			if (upkeepCost > new Object() {
+				public int getEnergyStored(LevelAccessor level, BlockPos pos) {
+					if (level instanceof ILevelExtension _ext) {
+						IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, pos, null);
+						if (_entityStorage != null)
+							return _entityStorage.getEnergyStored();
+					}
+					return 0;
+				}
+			}.getEnergyStored(world, BlockPos.containing(x, y, z)) && (new Object() {
 				public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
 					BlockEntity blockEntity = world.getBlockEntity(pos);
 					if (blockEntity != null)
@@ -215,7 +248,7 @@ public class ForceprojectorOnTickUpdateProcedure {
 		if (world instanceof ILevelExtension _ext) {
 			IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y, z), null);
 			if (_entityStorage != null)
-				_entityStorage.extractEnergy((int) (MfffModVariables.MapVariables.get(world).force_projector_energy_cost / 2), false);
+				_entityStorage.extractEnergy((int) (upkeepCost * 10), false);
 		}
 	}
 }

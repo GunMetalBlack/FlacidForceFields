@@ -125,6 +125,12 @@
     "onTickUpdate": {
       "name": "ForceprojectorOnTickUpdate"
     },
+    "onDestroyedByPlayer": {
+      "name": "RemoveCurrentForceField"
+    },
+    "onDestroyedByExplosion": {
+      "name": "RemoveCurrentForceField"
+    },
     "onStartToDestroy": {
       "name": "ForceprojectorPlayerStartsToDestroy"
     },

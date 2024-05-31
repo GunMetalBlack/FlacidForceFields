@@ -13,6 +13,7 @@ public class ForceprojectorBlockAddedNBTProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
+		RemoveCurrentForceFieldProcedure.execute(world, x, y, z);
 		if (!world.isClientSide()) {
 			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);

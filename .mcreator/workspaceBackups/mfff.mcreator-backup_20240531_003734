@@ -1,0 +1,471 @@
+{
+  "mod_elements": [
+    {
+      "name": "MFFFTAB",
+      "type": "tab",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mffftab",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "ForceProjectorUI",
+      "type": "gui",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "force_projector_ui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/world/inventory/ForceProjectorUIMenu.java",
+          "src/main/java/net/mcreator/mfff/client/gui/ForceProjectorUIScreen.java"
+        ]
+      }
+    },
+    {
+      "name": "Forceprojector",
+      "type": "block",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "forceprojector",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mfff/loot_tables/blocks/forceprojector.json",
+          "src/main/resources/assets/mfff/models/item/forceprojector.json",
+          "src/main/java/net/mcreator/mfff/block/ForceprojectorBlock.java",
+          "src/main/java/net/mcreator/mfff/block/entity/ForceprojectorBlockEntity.java",
+          "src/main/resources/assets/mfff/models/block/forceprojector.json",
+          "src/main/resources/assets/mfff/blockstates/forceprojector.json"
+        ]
+      }
+    },
+    {
+      "name": "ForceBlock",
+      "type": "block",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "force_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mfff/loot_tables/blocks/force_block.json",
+          "src/main/resources/assets/mfff/models/item/force_block.json",
+          "src/main/resources/assets/mfff/blockstates/force_block.json",
+          "src/main/java/net/mcreator/mfff/block/entity/ForceBlockBlockEntity.java",
+          "src/main/java/net/mcreator/mfff/block/ForceBlockBlock.java",
+          "src/main/resources/assets/mfff/models/block/force_block.json"
+        ]
+      }
+    },
+    {
+      "name": "ForceprojectorOnTickUpdate",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "forceprojector_on_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/ForceprojectorOnTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GetAxisDirection",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_axis_direction",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/GetAxisDirectionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ForceProjectorUIWhileThisGUIIsOpenTickRadius",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "force_projector_ui_while_this_gui_is_open_tick_radius",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/ForceProjectorUIWhileThisGUIIsOpenTickRadiusProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ForceprojectorBlockAddedNBT",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "forceprojector_block_added_nbt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/ForceprojectorBlockAddedNBTProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ForceprojectorOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "forceprojector_on_block_right_clicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/ForceprojectorOnBlockRightClickedProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ForceBlockOnTickUpdate",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "force_block_on_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/ForceBlockOnTickUpdateProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ForceprojectorPlayerStartsToDestroy",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "forceprojector_player_starts_to_destroy",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/ForceprojectorPlayerStartsToDestroyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ForceProjectorUIWhileThisGUIIsOpenTick",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "force_projector_ui_while_this_gui_is_open_tick",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/ForceProjectorUIWhileThisGUIIsOpenTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ForceProjectorUIThisGUIIsOpened",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "force_projector_ui_this_gui_is_opened",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/ForceProjectorUIThisGUIIsOpenedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ForceBlockBlockAdded",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "force_block_block_added",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/ForceBlockBlockAddedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RemoveCurrentForceField",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "remove_current_force_field",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/RemoveCurrentForceFieldProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "forceFieldDirectionParamater",
+      "type": "direction",
+      "scope": "map",
+      "value": "Direction.NORTH"
+    },
+    {
+      "name": "transfer_force_radius",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "transfer_force_offsetx",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "transfer_force_offsety",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "transfer_force_offsetz",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "is_force_gui_values",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "true"
+    },
+    {
+      "name": "should_update_force_ui",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "update_force_gui_counter",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "force_projector_energy_cost",
+      "type": "number",
+      "scope": "map",
+      "value": "1000.0"
+    }
+  ],
+  "sound_elements": [],
+  "tag_elements": {
+    "BLOCKS:minecraft:needs_diamond_tool": [
+      "~CUSTOM:ForceBlock"
+    ]
+  },
+  "language_map": {
+    "en_us": {
+      "block.mfff.forceprojector": "Force Projector",
+      "gui.mfff.force_projector_ui.label_offsety": "OffsetY",
+      "gui.mfff.force_projector_ui.Radius": "Radius",
+      "gui.mfff.force_projector_ui.label_offsetz": "OffsetZ",
+      "gui.mfff.force_projector_ui.label_offsetx": "OffsetX:",
+      "gui.mfff.force_projector_ui.label_radius": "Radius: | Max: 50",
+      "gui.mfff.force_projector_ui.OffsetZ": "OffsetZ",
+      "gui.mfff.force_projector_ui.OffsetX": "OffsetX",
+      "gui.mfff.force_projector_ui.OffsetY": "OffsetY",
+      "gui.mfff.force_projector_ui.label_force_projector": "Force Projector",
+      "gui.mfff.force_projector_ui.label_400000": "400,000",
+      "gui.mfff.force_projector_ui.label_current_power": "Energy Stored:",
+      "block.mfff.force_block": "Force Block",
+      "gui.mfff.force_projector_ui.label_capacity": "Capacity:",
+      "item_group.mfff.mffftab": "MFFF"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "mfff",
+    "modName": "MFFF",
+    "version": "1.0.0",
+    "author": "noah, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.20.4",
+    "modElementsPackage": "net.mcreator.mfff"
+  },
+  "mcreatorVersion": 202400118518
+}

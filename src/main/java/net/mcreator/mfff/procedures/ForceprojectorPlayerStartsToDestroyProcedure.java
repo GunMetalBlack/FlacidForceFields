@@ -12,7 +12,7 @@ public class ForceprojectorPlayerStartsToDestroyProcedure {
 		if (world instanceof ILevelExtension _ext) {
 			IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y, z), null);
 			if (_entityStorage != null)
-				_entityStorage.receiveEnergy(1000, false);
+				_entityStorage.receiveEnergy(10000, false);
 		}
 	}
 }

@@ -16,12 +16,14 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.BuiltInRegistries;
 
 import net.mcreator.mfff.block.entity.ForceprojectorBlockEntity;
+import net.mcreator.mfff.block.entity.ForceBlockBlockEntity;
 import net.mcreator.mfff.MfffMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MfffModBlockEntities {
 	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, MfffMod.MODID);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> FORCEPROJECTOR = register("forceprojector", MfffModBlocks.FORCEPROJECTOR, ForceprojectorBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> FORCE_BLOCK = register("force_block", MfffModBlocks.FORCE_BLOCK, ForceBlockBlockEntity::new);
 
 	private static DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> register(String registryname, DeferredHolder<Block, Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));
@@ -31,5 +33,6 @@ public class MfffModBlockEntities {
 	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, FORCEPROJECTOR.get(), (blockEntity, side) -> ((ForceprojectorBlockEntity) blockEntity).getItemHandler());
 		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, FORCEPROJECTOR.get(), (blockEntity, side) -> ((ForceprojectorBlockEntity) blockEntity).getEnergyStorage());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, FORCE_BLOCK.get(), (blockEntity, side) -> ((ForceBlockBlockEntity) blockEntity).getItemHandler());
 	}
 }

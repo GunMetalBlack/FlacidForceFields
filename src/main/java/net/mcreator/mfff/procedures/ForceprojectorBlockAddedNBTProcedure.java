@@ -8,13 +8,11 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.mfff.network.MfffModVariables;
-import net.mcreator.mfff.MfffMod;
 
 public class ForceprojectorBlockAddedNBTProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		MfffMod.LOGGER.info("Should be updating nbt when open gui" + entity.getData(MfffModVariables.PLAYER_VARIABLES).transfer_force_offsetx);
 		if (!world.isClientSide()) {
 			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
@@ -51,9 +49,18 @@ public class ForceprojectorBlockAddedNBTProcedure {
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
+		if (!world.isClientSide()) {
+			BlockPos _bp = BlockPos.containing(x, y, z);
+			BlockEntity _blockEntity = world.getBlockEntity(_bp);
+			BlockState _bs = world.getBlockState(_bp);
+			if (_blockEntity != null)
+				_blockEntity.getPersistentData().putBoolean("should_rebuild_force_field", false);
+			if (world instanceof Level _level)
+				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+		}
 		{
 			MfffModVariables.PlayerVariables _vars = entity.getData(MfffModVariables.PLAYER_VARIABLES);
-			_vars.is_force_gui_values = false;
+			_vars.is_force_gui_values = true;
 			_vars.syncPlayerVariables(entity);
 		}
 	}

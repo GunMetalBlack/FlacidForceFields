@@ -137,6 +137,7 @@ public class MfffModVariables {
 	public static class MapVariables extends SavedData {
 		public static final String DATA_NAME = "mfff_mapvars";
 		public Direction forceFieldDirectionParamater = Direction.NORTH;
+		public double force_projector_energy_cost = 1000.0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -146,11 +147,13 @@ public class MfffModVariables {
 
 		public void read(CompoundTag nbt) {
 			forceFieldDirectionParamater = Direction.from3DDataValue(nbt.getInt("forceFieldDirectionParamater"));
+			force_projector_energy_cost = nbt.getDouble("force_projector_energy_cost");
 		}
 
 		@Override
 		public CompoundTag save(CompoundTag nbt) {
 			nbt.putInt("forceFieldDirectionParamater", forceFieldDirectionParamater.get3DDataValue());
+			nbt.putDouble("force_projector_energy_cost", force_projector_energy_cost);
 			return nbt;
 		}
 

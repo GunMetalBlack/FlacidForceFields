@@ -31,6 +31,16 @@ public class ForceBlockReplaceByTickProcedure {
 	}
 
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, BlockState blockstate) {
+		double upkeepCost = 0;
+		double OffsetX = 0;
+		double i = 0;
+		double OffsetZ = 0;
+		double j = 0;
+		double OffsetY = 0;
+		double radius = 0;
+		double sudoBlockPosZ = 0;
+		double sudoBlockPosY = 0;
+		double sudoBlockPosX = 0;
 		if (blockstate.getBlock() == MfffModBlocks.FORCE_BLOCK.get()) {
 			if (new Object() {
 				public int getEnergyStored(LevelAccessor level, BlockPos pos) {

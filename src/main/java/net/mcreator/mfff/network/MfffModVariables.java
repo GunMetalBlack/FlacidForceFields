@@ -224,7 +224,7 @@ public class MfffModVariables {
 	}
 
 	public static class PlayerVariables implements INBTSerializable<CompoundTag> {
-		public double transfer_force_radius = 0;
+		public double transfer_force_radius = 3.0;
 		public double transfer_force_offsetx = 0;
 		public double transfer_force_offsety = 0;
 		public double transfer_force_offsetz = 0;

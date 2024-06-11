@@ -98,6 +98,7 @@ public class ForceProjectorUIWhileThisGUIIsOpenTickProcedure {
 				_vars.syncPlayerVariables(entity);
 			}
 		}
+		ReturnCurrentUpkeepProcedure.execute(world, x, y, z);
 		return (new java.text.DecimalFormat("##").format(new Object() {
 			public int getEnergyStored(LevelAccessor level, BlockPos pos) {
 				if (level instanceof ILevelExtension _ext) {

@@ -7,9 +7,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.EditBox;
+import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.mfff.world.inventory.ForceProjectorUIMenu;
+import net.mcreator.mfff.procedures.ReturnCurrentUpkeepProcedure;
 import net.mcreator.mfff.procedures.ForceProjectorUIWhileThisGUIIsOpenTickProcedure;
 
 import java.util.HashMap;
@@ -25,6 +27,7 @@ public class ForceProjectorUIScreen extends AbstractContainerScreen<ForceProject
 	EditBox OffsetX;
 	EditBox OffsetY;
 	EditBox OffsetZ;
+	Button button_regenerate;
 
 	public ForceProjectorUIScreen(ForceProjectorUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -113,7 +116,9 @@ public class ForceProjectorUIScreen extends AbstractContainerScreen<ForceProject
 		guiGraphics.drawString(this.font,
 
 				ForceProjectorUIWhileThisGUIIsOpenTickProcedure.execute(world, x, y, z, entity, guistate), 146, 63, -6697984, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_400000"), 146, 90, -12829636, false);
+		guiGraphics.drawString(this.font,
+
+				ReturnCurrentUpkeepProcedure.execute(world, x, y, z), 146, 90, -12829636, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_offsetx"), 11, 63, -12829636, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_offsety"), 11, 99, -12829636, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.mfff.force_projector_ui.label_offsetz"), 11, 135, -12829636, false);
@@ -215,5 +220,9 @@ public class ForceProjectorUIScreen extends AbstractContainerScreen<ForceProject
 		OffsetZ.setSuggestion(Component.translatable("gui.mfff.force_projector_ui.OffsetZ").getString());
 		guistate.put("text:OffsetZ", OffsetZ);
 		this.addWidget(this.OffsetZ);
+		button_regenerate = Button.builder(Component.translatable("gui.mfff.force_projector_ui.button_regenerate"), e -> {
+		}).bounds(this.leftPos + 146, this.topPos + 126, 77, 20).build();
+		guistate.put("button:button_regenerate", button_regenerate);
+		this.addRenderableWidget(button_regenerate);
 	}
 }

@@ -113,7 +113,7 @@
     "inventoryInSlotIDs": [],
     "hasEnergyStorage": true,
     "energyInitial": 0,
-    "energyCapacity": 70000000,
+    "energyCapacity": 200000000,
     "energyMaxReceive": 2147483647,
     "energyMaxExtract": 2147483647,
     "isFluidTank": false,

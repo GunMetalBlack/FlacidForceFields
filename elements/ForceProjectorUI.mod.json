@@ -28,7 +28,7 @@
       {
         "type": "textfield",
         "data": {
-          "placeholder": "Radius",
+          "placeholder": "3",
           "name": "Radius",
           "width": 120,
           "height": 20,
@@ -74,7 +74,7 @@
         "data": {
           "name": "label_capacity",
           "text": {
-            "fixedValue": "Capacity:"
+            "fixedValue": "Req Init Energy"
           },
           "color": {
             "value": -12829636,
@@ -120,7 +120,8 @@
         "data": {
           "name": "label_400000",
           "text": {
-            "fixedValue": "400,000"
+            "fixedValue": "400,000",
+            "name": "ReturnCurrentUpkeep"
           },
           "color": {
             "value": -12829636,
@@ -314,6 +315,18 @@
           },
           "x": 78,
           "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_regenerate",
+          "text": "Regenerate",
+          "isUndecorated": false,
+          "width": 77,
+          "height": 20,
+          "x": 213,
+          "y": 161
         }
       }
     ],

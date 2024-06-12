@@ -87,28 +87,10 @@ public class ForceprojectorOnTickUpdateProcedure {
 		}.getValue(world, BlockPos.containing(x, y, z), "int_offsetz");
 		upkeepCost = Math.pow(radius + 1, 2) * 6;
 		MfffMod.LOGGER.info(upkeepCost);
-		if (upkeepCost * MfffModVariables.MapVariables.get(world).force_projector_energy_cost <= new Object() {
-			public int getEnergyStored(LevelAccessor level, BlockPos pos) {
-				if (level instanceof ILevelExtension _ext) {
-					IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, pos, null);
-					if (_entityStorage != null)
-						return _entityStorage.getEnergyStored();
-				}
-				return 0;
-			}
-		}.getEnergyStored(world, BlockPos.containing(x, y, z)) && (new Object() {
-			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
-				BlockEntity blockEntity = world.getBlockEntity(pos);
-				if (blockEntity != null)
-					return blockEntity.getPersistentData().getBoolean(tag);
-				return false;
-			}
-		}.getValue(world, BlockPos.containing(x, y, z), "should_rebuild_force_field")) == true) {
-			if (world instanceof ILevelExtension _ext) {
-				IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y, z), null);
-				if (_entityStorage != null)
-					_entityStorage.extractEnergy((int) (upkeepCost / 0), false);
-			}
+		if (world instanceof ILevelExtension _ext) {
+			IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y, z), null);
+			if (_entityStorage != null)
+				_entityStorage.extractEnergy((int) (upkeepCost / 2), false);
 		}
 		if (upkeepCost * MfffModVariables.MapVariables.get(world).force_projector_energy_cost <= new Object() {
 			public int getEnergyStored(LevelAccessor level, BlockPos pos) {

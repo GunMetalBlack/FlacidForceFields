@@ -42,7 +42,7 @@ import net.mcreator.mfff.world.inventory.ForceProjectorUIMenu;
 import net.mcreator.mfff.procedures.RemoveCurrentForceFieldProcedure;
 import net.mcreator.mfff.procedures.ForceprojectorPlayerStartsToDestroyProcedure;
 import net.mcreator.mfff.procedures.ForceprojectorOnTickUpdateProcedure;
-import net.mcreator.mfff.procedures.ForceprojectorBlockAddedNBTProcedure;
+import net.mcreator.mfff.procedures.ForceprojectorBlockAddedProcedure;
 import net.mcreator.mfff.block.entity.ForceprojectorBlockEntity;
 
 import io.netty.buffer.Unpooled;
@@ -104,6 +104,15 @@ public class ForceprojectorBlock extends Block implements SimpleWaterloggedBlock
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
 		world.scheduleTick(pos, this, 1);
+		ForceprojectorBlockAddedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+	}
+
+	@Override
+	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
+		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
+		if (world.getBestNeighborSignal(pos) > 0) {
+			ForceprojectorPlayerStartsToDestroyProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		}
 	}
 
 	@Override
@@ -127,12 +136,6 @@ public class ForceprojectorBlock extends Block implements SimpleWaterloggedBlock
 	}
 
 	@Override
-	public void attack(BlockState blockstate, Level world, BlockPos pos, Player entity) {
-		super.attack(blockstate, world, pos, entity);
-		ForceprojectorPlayerStartsToDestroyProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
-	}
-
-	@Override
 	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
 		super.use(blockstate, world, pos, entity, hand, hit);
 		if (entity instanceof ServerPlayer player) {
@@ -148,14 +151,6 @@ public class ForceprojectorBlock extends Block implements SimpleWaterloggedBlock
 				}
 			}, pos);
 		}
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		double hitX = hit.getLocation().x;
-		double hitY = hit.getLocation().y;
-		double hitZ = hit.getLocation().z;
-		Direction direction = hit.getDirection();
-		ForceprojectorBlockAddedNBTProcedure.execute(world, x, y, z, entity);
 		return InteractionResult.SUCCESS;
 	}
 

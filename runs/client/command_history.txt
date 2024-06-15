@@ -35,3 +35,9 @@
 /time set night
 /gamemode spectator
 /gamemode survival
+/gamemode s
+/gamemode survival
+/g
+/gamemode survival
+/give Dev leve
+/give Dev minecraft:lever

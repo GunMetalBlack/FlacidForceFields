@@ -26,6 +26,7 @@ public class ReturnCurrentUpkeepProcedure {
 				return -1;
 			}
 		}.getValue(world, BlockPos.containing(x, y, z), "int_radius") + 1, 2) * 6;
-		return new java.text.DecimalFormat("##").format(upkeepCost * MfffModVariables.MapVariables.get(world).force_projector_energy_cost);
+		return new java.text.DecimalFormat("##").format(upkeepCost * MfffModVariables.MapVariables.get(world).force_projector_energy_cost) + "* 3 = "
+				+ new java.text.DecimalFormat("##").format(upkeepCost * MfffModVariables.MapVariables.get(world).force_projector_energy_cost * 3);
 	}
 }

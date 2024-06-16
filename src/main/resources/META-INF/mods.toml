@@ -1,29 +1,22 @@
 modLoader="javafml"
-loaderVersion="[2,)"
-license="Not specified"
+loaderVersion="[47,)"
+license="MIT License"
 
 [[mods]]
-modId="mfff"
+modId="sff"
 version="1.0.0"
-displayName="MFFF"
+displayName="Simple Force Field"
 displayURL="https://mcreator.net"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
-authors="noah, MCreator"
+authors="GunMetalBlack"
 
 # Start of user code block mod configuration
 # End of user code block mod configuration
 
-[[dependencies.mfff]]
-    modId="neoforge"
-    type="required"
-    versionRange="[20.4.223,)"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.mfff]]
+[[dependencies.sff]]
     modId="minecraft"
-    type="required"
-    versionRange="[1.20.4]"
+    mandatory=true
+    versionRange="[1.20.1]"
     ordering="NONE"
     side="BOTH"
 

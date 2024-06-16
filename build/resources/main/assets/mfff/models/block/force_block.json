@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "mfff:block/redoforcetexture",
-    "particle": "mfff:block/redoforcetexture"
-  },
-  "render_type": "translucent"
-}

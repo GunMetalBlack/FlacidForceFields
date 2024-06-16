@@ -1,0 +1,9 @@
+{
+  "parent": "sff:custom/forceprojector",
+  "textures": {
+    "all": "sff:block/texture1",
+    "particle": "sff:block/texture1",
+    "0": "sff:block/texture1"
+  },
+  "render_type": "cutout_mipped"
+}

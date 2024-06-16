@@ -1,0 +1,22 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2024-06-15 18:36:43 -0500"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:savanna": "2024-06-15 18:36:49 -0500",
+      "minecraft:plains": "2024-06-15 18:36:52 -0500"
+    },
+    "done": false
+  },
+  "minecraft:recipes/decorations/glow_item_frame": {
+    "criteria": {
+      "has_item_frame": "2024-06-15 18:42:57 -0500"
+    },
+    "done": true
+  },
+  "DataVersion": 3700
+}

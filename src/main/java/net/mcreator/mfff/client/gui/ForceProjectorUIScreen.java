@@ -1,5 +1,7 @@
 package net.mcreator.mfff.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -13,6 +15,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.mcreator.mfff.world.inventory.ForceProjectorUIMenu;
 import net.mcreator.mfff.procedures.ReturnCurrentUpkeepProcedure;
 import net.mcreator.mfff.procedures.ForceProjectorUIWhileThisGUIIsOpenTickProcedure;
+import net.mcreator.mfff.network.ForceProjectorUIButtonMessage;
 
 import java.util.HashMap;
 
@@ -221,6 +224,10 @@ public class ForceProjectorUIScreen extends AbstractContainerScreen<ForceProject
 		guistate.put("text:OffsetZ", OffsetZ);
 		this.addWidget(this.OffsetZ);
 		button_regenerate = Button.builder(Component.translatable("gui.mfff.force_projector_ui.button_regenerate"), e -> {
+			if (true) {
+				PacketDistributor.SERVER.noArg().send(new ForceProjectorUIButtonMessage(0, x, y, z));
+				ForceProjectorUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
 		}).bounds(this.leftPos + 146, this.topPos + 126, 77, 20).build();
 		guistate.put("button:button_regenerate", button_regenerate);
 		this.addRenderableWidget(button_regenerate);

@@ -13,6 +13,6 @@
   "gui.mfff.force_projector_ui.label_current_power": "Energy Stored:",
   "block.mfff.force_block": "Force Block",
   "gui.mfff.force_projector_ui.button_regenerate": "Regenerate",
-  "gui.mfff.force_projector_ui.label_capacity": "Req Init Energy",
+  "gui.mfff.force_projector_ui.label_capacity": "Init Energy",
   "item_group.mfff.mffftab": "MFFF"
 }

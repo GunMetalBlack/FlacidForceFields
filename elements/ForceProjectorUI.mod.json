@@ -74,7 +74,7 @@
         "data": {
           "name": "label_capacity",
           "text": {
-            "fixedValue": "Req Init Energy"
+            "fixedValue": "Init Energy"
           },
           "color": {
             "value": -12829636,
@@ -323,6 +323,9 @@
           "name": "button_regenerate",
           "text": "Regenerate",
           "isUndecorated": false,
+          "onClick": {
+            "name": "RegenerateButton"
+          },
           "width": 77,
           "height": 20,
           "x": 213,

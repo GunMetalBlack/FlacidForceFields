@@ -20,6 +20,7 @@
       "registry_name": "force_projector_ui",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/mfff/network/ForceProjectorUIButtonMessage.java",
           "src/main/java/net/mcreator/mfff/world/inventory/ForceProjectorUIMenu.java",
           "src/main/java/net/mcreator/mfff/client/gui/ForceProjectorUIScreen.java"
         ]
@@ -30,7 +31,7 @@
       "type": "block",
       "sortid": 3,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "forceprojector",
       "metadata": {
         "files": [
@@ -477,6 +478,72 @@
           }
         ]
       }
+    },
+    {
+      "name": "RegenerateButton",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "regenerate_button",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/RegenerateButtonProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OnSetAir",
+      "type": "procedure",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_set_air",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mfff/procedures/OnSetAirProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -585,7 +652,7 @@
       "gui.mfff.force_projector_ui.label_current_power": "Energy Stored:",
       "block.mfff.force_block": "Force Block",
       "gui.mfff.force_projector_ui.button_regenerate": "Regenerate",
-      "gui.mfff.force_projector_ui.label_capacity": "Req Init Energy",
+      "gui.mfff.force_projector_ui.label_capacity": "Init Energy",
       "item_group.mfff.mffftab": "MFFF"
     }
   },
